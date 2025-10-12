@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from PIL import Image
 import time
 import math
+import os
 
 from vit import ViT
 
@@ -80,8 +81,8 @@ val_loader = DataLoader(val_ds,batch_size=batch_size,num_workers=8,pin_memory=Tr
 
 # LR Schedule ----------------------------------------------------------------------
 
-epochs = 7
-max_iter = epochs * 3959
+# epochs = 10
+max_iter = 40000 # epochs * 3959
 warmup_steps = max_iter * 0.05
 max_lr = 3e-4
 min_lr = max_lr * 0.1
@@ -102,7 +103,6 @@ def get_lr(i):
     c = 0.5 * (1.0 + math.cos(math.pi * decay_ratio))
 
     return min_lr + c * (max_lr - min_lr)    
-        
 
 
 
@@ -128,9 +128,21 @@ class ViTBaseConfig:
 
 # Model
 vit = ViT(ViTBaseConfig())
-print(sum([p.numel() for p in vit.parameters()]))
+print(f'{sum([p.numel() for p in vit.parameters()])/10**6} M')
 
-vit_compile = torch.compile(vit.to(device))
+vit = vit.to(device)               # ship model to GPU VRAM
+vit_compile = torch.compile(vit)   # wapper but use VRAM vit params
+
+
+
+# Dir for save checkpoints ----------------------------------------------------------
+ 
+log_dir = "log"
+os.makedirs(log_dir, exist_ok=True)
+log_file = os.path.join(log_dir, f"log.txt")
+
+with open(log_file, "w") as f: 
+    pass 
 
 
 # Train ----------------------------------------------------------------------------
@@ -140,67 +152,86 @@ use_fused = torch.cuda.is_available()
 optimizer = torch.optim.AdamW(vit_compile.parameters(),lr = max_lr,weight_decay=0.1,fused=use_fused)
 
 
-
-step = 0
-for i in range(epochs):
+train_iter = iter(train_loader)
+# step = 0
+# for i in range(epochs):
     
-    for xb,yb in train_loader:     # 3959.03125 baches for 1 train epoch
+for step in range(max_iter):     # 3959.03125 baches for 1 train epoch
+    
+    t0 = time.time()
+    
+    # Val -----------------------------------------------------------------------
+    if step==0 or step%1000==0 or step == max_iter:
         
+        val_step = 0
+        val_loss = 0.0
+        vit_compile.eval()
+        with torch.no_grad():
+            for x,y in val_loader:    # 156.25 for 1 val epoch
+                x,y = x.to(device),y.to(device)
+                with torch.autocast(device_type=device, dtype=torch.bfloat16):
+                    logits , loss = vit_compile(x,y)
+                
+                val_loss += loss.detach()
+                val_step+=1
+            val_loss /= val_step
+        print(f'Validation loss : {val_loss.item():.4f}')
+        with open(log_file, "a") as f:
+            f.write(f"{step} val {val_loss.item():.4f}\n")
+        vit_compile.train()
+    
+    
+    
+    # Checkpoints ---------------------------------------------------------------
+    if step>0 and (step%10000==0 or step==max_iter-1):
         
-        # Val -----------------------------------------------------------------------
-        if step==0 or step%1000==0 or step == max_iter:
-            
-            val_step = 0
-            val_loss = 0.0
-            vit_compile.eval()
-            with torch.no_grad():
-                for x,y in val_loader:    # 156.25 for 1 val epoch
-                    x,y = x.to(device),y.to(device)
-                    with torch.autocast(device_type=device, dtype=torch.bfloat16):
-                        logits , loss = vit_compile(x,y)
-                    
-                    val_loss += loss.detach()
-                    val_step+=1
-                val_loss /= val_step
-            print(f'Validation loss : {val_loss.item():.4f}')
-            vit_compile.train()
-        
-        
-        
-        t0 = time.time()
-        # Train ---------------------------------------------------------------------
-        xb,yb = xb.to(device),yb.to(device)
-        
-        optimizer.zero_grad()
-        with torch.autocast(device_type=device, dtype=torch.bfloat16):
-            logits , loss = vit_compile(xb,yb)
-            
-        loss.backward()
-        
-        # Gradient Clipping
-        norm = torch.nn.utils.clip_grad_norm_(vit_compile.parameters(), 1.0)
-        
-        # LR Schedule
-        lr = get_lr(step)
-        for param_group in optimizer.param_groups: 
-            param_group['lr'] = lr  # update optimizer
-            
-        optimizer.step()
-        # ---------------------------------------------------------------------------
-        
-        t1 = time.time()
-        dt = (t1 - t0)*1000  # ms
-        
-        print(f'{step}/{max_iter}  {loss.item():.4f}  {dt:.4f} ms  norm:{norm.item():.4f}  lr:{lr:.4e}')
-        
-        step+=1
-        
-        
-        
-        
-        
-            
-        
+        checkpoint_path = os.path.join(log_dir, f"model_{step:05d}.pt")
+        checkpoint = {
+            'model': vit.state_dict(),
+            'config': vit.config,
+            'step': step,
+            'val_loss': val_loss.item(),
+            'optimizer': optimizer.state_dict()
+        }
+        torch.save(checkpoint, checkpoint_path)
+        print(f"Checkpoint saved: {checkpoint_path}")
         
         
     
+    
+    
+    # Train ---------------------------------------------------------------------
+    try:
+        xb,yb = next(train_iter)
+    except StopIteration:
+        train_iter = iter(train_iter)
+        xb,yb = next(train_iter)
+        
+    xb,yb = xb.to(device),yb.to(device)
+    
+    optimizer.zero_grad()
+    with torch.autocast(device_type=device, dtype=torch.bfloat16):
+        logits , loss = vit_compile(xb,yb)
+        
+    loss.backward()
+    
+    # Gradient Clipping
+    norm = torch.nn.utils.clip_grad_norm_(vit_compile.parameters(), 1.0)
+    
+    # LR Schedule
+    lr = get_lr(step)
+    for param_group in optimizer.param_groups: 
+        param_group['lr'] = lr  # update optimizer
+        
+    optimizer.step()
+    # ---------------------------------------------------------------------------
+    
+    t1 = time.time()
+    dt = (t1 - t0)*1000  # ms
+    
+    print(f'{step}/{max_iter}  {loss.item():.4f}  {dt:.4f} ms  norm:{norm.item():.4f}  lr:{lr:.4e}')
+    
+    with open(log_file, "a") as f:
+        f.write(f"{step} train {loss.item():.6f}\n")
+    
+    # step+=1
