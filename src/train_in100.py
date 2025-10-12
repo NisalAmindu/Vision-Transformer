@@ -81,8 +81,8 @@ val_loader = DataLoader(val_ds,batch_size=batch_size,num_workers=8,pin_memory=Tr
 
 # LR Schedule ----------------------------------------------------------------------
 
-# epochs = 10
-max_iter = 40000 # epochs * 3959
+# epochs = 100
+max_iter = 400000 # epochs * 3959
 warmup_steps = max_iter * 0.05
 max_lr = 3e-4
 min_lr = max_lr * 0.1
@@ -204,7 +204,7 @@ for step in range(max_iter):     # 3959.03125 baches for 1 train epoch
     try:
         xb,yb = next(train_iter)
     except StopIteration:
-        train_iter = iter(train_iter)
+        train_iter = iter(train_loader)
         xb,yb = next(train_iter)
         
     xb,yb = xb.to(device),yb.to(device)
