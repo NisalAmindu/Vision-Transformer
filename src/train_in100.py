@@ -183,7 +183,7 @@ for step in range(max_iter):     # 3959.03125 baches for 1 train epoch
     
     
     # Checkpoints ---------------------------------------------------------------
-    if step>0 and (step%10000==0 or step==max_iter-1):
+    if step>0 and (step%50000==0 or step==max_iter-1):
         
         checkpoint_path = os.path.join(log_dir, f"model_{step:05d}.pt")
         checkpoint = {
