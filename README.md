@@ -9,7 +9,7 @@ Vision Transformer (ViT) implementations from scratch
 ## ViT Architecture
 
 <p align="center">
-  <img src="images/vit.png" alt="ViT architecture" width="400"/>
+  <img src="images/vit.png" alt="ViT architecture" width="420"/>
 </p>
 
 
@@ -373,9 +373,9 @@ Time for just one Iteration
     </td>
     <td valign="top" width="50%">
       <h4>Loss Curve</h4>
-      <img src="images/s6.png" alt="Loss curve - Step 6" width="400"/>
+      <img src="images/s6.png" alt="Loss curve - Step 6" width="420"/>
       <h4>Norms</h4>
-      <img src="images/s6_.png" alt="Norms - Step 6" width="400"/>
+      <img src="images/s6_.png" alt="Norms - Step 6" width="420"/>
     </td>
   </tr>
 </table>
@@ -384,6 +384,60 @@ Time for just one Iteration
 ```
 0.6481 : Batch Size = 32
 ```
+
+---
+
+## Step 7
+
+- Trained in Rtx 4080 16GB
+- Data Augmentation
+- Fused Kernels
+
+### Vision Transformer Model Configuration
+```
+ViT Base
+n_layer    = 12
+n_head     = 12
+n_embd     = 768
+
+Total parameters = ~86M
+```
+
+
+**Training Configuration**
+```
+Max Iterations = 10000
+Batch Size     = 32  
+Dropout        = 0.1
+Weight Decay   = 0.1
+
+IMAGENET100 Dataset :
+image size     = 224 x 224 
+image channels = 3
+patch size     = 16 x 16   **
+```
+
+
+
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <h4>Training Results</h4>
+      <h4>Loss Curve</h4>
+      <img src="images/s7_.png" alt="Training Results" width="420"/>
+    </td>
+    <td valign="top" width="50%">
+      <h4>Loss Curve</h4>
+      <img src="images/s7.png" alt="Loss curve - Step 7" width="420"/>
+    </td>
+  </tr>
+</table>
+
+Min Train Loss: 1.8e-05
+Min Validation Loss: 1.1369
+
+Next **Evaluation** 
+
 
 ---
 
