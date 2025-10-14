@@ -29,10 +29,24 @@ class Config:
     @property
     def n_patch(self):
         return (self.img_size//self.patch_size)**2
+      
+      
+@dataclass
+class ViTBaseConfig:
+    num_classes: int = 100        # Imagenet 100
+    img_size: int = 224      
+    im_channels: int = 3
+    patch_size: int = 16
 
+    n_head: int = 12
+    n_layer: int = 12
+    n_embd: int = 768
 
+    dropout = 0.1  
 
-
+    @property
+    def n_patch(self):
+        return (self.img_size//self.patch_size)**2
 
 #_______________________________________________________________________________
 
