@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧠 Vision Transformer (ViT) Implementation from Scratch
 
 ## 📘 Overview
@@ -12,9 +13,4 @@ Our goal is to replicate and fine-tune the Vision Transformer (ViT-B/16) archite
 ## 👨‍💻 Team Members
 - Nisal Kulasinghe   
 - Samitha Sahan Bandara  
-
-
----
-
-
-
+=======
