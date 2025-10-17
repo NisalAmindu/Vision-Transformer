@@ -2,10 +2,10 @@ import torch
 import numpy as np
 import matplotlib.pyplot as plt
 
-from vit import ViT, ViTBaseConfig
 
-
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+torch.manual_seed(278)
+if torch.cuda.is_available():
+    torch.cuda.manual_seed(278)
 
 
 def evaluate(model,val_loader,device):
@@ -20,7 +20,7 @@ def evaluate(model,val_loader,device):
     with torch.no_grad():
         for x, y in val_loader:
             x, y = x.to(device), y.to(device)
-            logits,loss = model(x)   # loss == None
+            logits = model(x)  
             probs = torch.softmax(logits, dim=1)
             
             all_preds.extend(logits.argmax(1).cpu().numpy())
@@ -51,19 +51,4 @@ def evaluate(model,val_loader,device):
     
     
     
-def main():
-    
-    # Load model
-    model = ViT(ViTBaseConfig)
-    checkpoint = torch.load('log/model_01000.pth')       # change path  
-    model.load_state_dict(checkpoint['model_state_dict'])
-    model.to(device)
-    
-    # Load val data
-    # val_loader = 
-    
-    # results = evaluate(model, val_loader, device)
-
-
-if __name__ == '__main__':
-    main()           
+         
