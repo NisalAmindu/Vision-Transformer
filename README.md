@@ -63,6 +63,12 @@ patch size     = 16 x 16   **
 - Min Train Loss        = 1.8e-05
 - Min Validation Loss   = 1.1369
 - Best Model Checkpoint = 300000 step
+- </br>
+- Best Model Evaluation:
+```
+top1_accuracy : 70.58
+top5_accuracy : 90.42
+```
 
 
 ---
@@ -70,4 +76,3 @@ patch size     = 16 x 16   **
 ### Team Members
 - Nisal Kulasinghe
 - Samitha Sahan  
-
