@@ -12,7 +12,7 @@ Our goal is to reproduce and fine tune the Vision Transformer (ViT-B/16) archite
 ## ViT Architecture
 
 <p align="center">
-  <img src="images/vit.png" alt="ViT architecture" width="420"/>
+  <img src="images/vit.png" alt="ViT architecture" width="500"/>
 </p>
 
 ---
@@ -38,8 +38,9 @@ Max lr         = 3e-4     (Min lr = 3e-5)
 Dropout        = 0.1
 Weight Decay   = 0.1      (Optimizer AdamW)
 Gradint Clip   = 1.0
-
+```
 [IMAGENET100 Dataset](https://huggingface.co/datasets/clane9/imagenet-100):
+```
 image size     = 224 x 224 
 image channels = 3
 patch size     = 16 x 16   **
@@ -50,7 +51,6 @@ patch size     = 16 x 16   **
   <tr>
     <td valign="top" width="50%">
       <h4>Training Results</h4>
-      <h4>Loss Curve</h4>
       <img src="images/s7_.png" alt="Training Results" width="320"/>
     </td>
     <td valign="top" width="50%">
@@ -68,6 +68,6 @@ patch size     = 16 x 16   **
 ---
 
 ### Team Members
-- Nisal Kulasinghe   
+- Nisal Kulasinghe
 - Samitha Sahan  
 
