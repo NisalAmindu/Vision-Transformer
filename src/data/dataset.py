@@ -99,7 +99,7 @@ def get_dataloaders(dataset_path,batch_size = 32):
 
 
 
-def get_val_dataloader(dataset_path,batch_size = 32):
+def get_val_dataloader(dataset_path,batch_size = 32,classes = False):
     
     data_dir = os.path.join(dataset_path, "data")
     val_file = os.path.join(data_dir, "validation-00000-of-00001.parquet")
@@ -123,5 +123,10 @@ def get_val_dataloader(dataset_path,batch_size = 32):
         persistent_workers=True
     )
     
-    return val_loader
+    
+    if classes: 
+        class_names = val_dataset.features['label'].names
+        return val_loader,class_names
+    else:
+        return val_loader
     
