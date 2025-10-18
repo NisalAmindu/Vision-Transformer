@@ -1,0 +1,724 @@
+{
+    "top1_accuracy": 74.46000000000001,
+    "top5_accuracy": 91.52,
+    "per_class_accuracy": {
+        "bonnet, poke bonnet": 66.0,
+        "green mamba": 80.0,
+        "langur": 76.0,
+        "Doberman, Doberman pinscher": 68.0,
+        "gyromitra": 94.0,
+        "Saluki, gazelle hound": 70.0,
+        "vacuum, vacuum cleaner": 66.0,
+        "window screen": 74.0,
+        "cocktail shaker": 66.0,
+        "garden spider, Aranea diademata": 86.0,
+        "garter snake, grass snake": 88.0,
+        "carbonara": 86.0,
+        "pineapple, ananas": 86.0,
+        "computer keyboard, keypad": 74.0,
+        "tripod": 60.0,
+        "komondor": 84.0,
+        "American lobster, Northern lobster, Maine lobster, Homarus americanus": 88.0,
+        "bannister, banister, balustrade, balusters, handrail": 80.0,
+        "honeycomb": 76.0,
+        "tile roof": 64.0,
+        "papillon": 90.0,
+        "boathouse": 82.0,
+        "stinkhorn, carrion fungus": 88.0,
+        "jean, blue jean, denim": 74.0,
+        "Chihuahua": 34.0,
+        "Chesapeake Bay retriever": 52.0,
+        "robin, American robin, Turdus migratorius": 90.0,
+        "tub, vat": 64.0,
+        "Great Dane": 52.0,
+        "rotisserie": 80.0,
+        "bottlecap": 66.0,
+        "throne": 74.0,
+        "little blue heron, Egretta caerulea": 98.0,
+        "rock crab, Cancer irroratus": 60.0,
+        "Rottweiler": 84.0,
+        "lorikeet": 98.0,
+        "Gila monster, Heloderma suspectum": 78.0,
+        "head cabbage": 88.0,
+        "car wheel": 74.0,
+        "coyote, prairie wolf, brush wolf, Canis latrans": 68.0,
+        "moped": 84.0,
+        "milk can": 50.0,
+        "mixing bowl": 90.0,
+        "toy terrier": 54.0,
+        "chocolate sauce, chocolate syrup": 80.0,
+        "rocking chair, rocker": 57.99999999999999,
+        "wing": 88.0,
+        "park bench": 68.0,
+        "ambulance": 98.0,
+        "football helmet": 78.0,
+        "leafhopper": 94.0,
+        "cauliflower": 94.0,
+        "pirate, pirate ship": 92.0,
+        "purse": 46.0,
+        "hare": 82.0,
+        "lampshade, lamp shade": 64.0,
+        "fiddler crab": 64.0,
+        "standard poodle": 80.0,
+        "Shih-Tzu": 88.0,
+        "pedestal, plinth, footstall": 74.0,
+        "gibbon, Hylobates lar": 88.0,
+        "safety pin": 44.0,
+        "English foxhound": 26.0,
+        "chime, bell, gong": 44.0,
+        "American Staffordshire terrier, Staffordshire terrier, American pit bull terrier, pit bull terrier": 70.0,
+        "bassinet": 84.0,
+        "wild boar, boar, Sus scrofa": 92.0,
+        "theater curtain, theatre curtain": 80.0,
+        "dung beetle": 84.0,
+        "hognose snake, puff adder, sand viper": 70.0,
+        "Mexican hairless": 72.0,
+        "mortarboard": 74.0,
+        "Walker hound, Walker foxhound": 76.0,
+        "red fox, Vulpes vulpes": 86.0,
+        "modem": 66.0,
+        "slide rule, slipstick": 66.0,
+        "walking stick, walkingstick, stick insect": 74.0,
+        "cinema, movie theater, movie theatre, movie house, picture palace": 74.0,
+        "meerkat, mierkat": 82.0,
+        "kuvasz": 90.0,
+        "obelisk": 88.0,
+        "harmonica, mouth organ, harp, mouth harp": 52.0,
+        "sarong": 70.0,
+        "mousetrap": 57.99999999999999,
+        "hard disc, hard disk, fixed disk": 80.0,
+        "American coot, marsh hen, mud hen, water hen, Fulica americana": 88.0,
+        "reel": 57.99999999999999,
+        "pickup, pickup truck": 84.0,
+        "iron, smoothing iron": 78.0,
+        "tabby, tabby cat": 84.0,
+        "ski mask": 64.0,
+        "vizsla, Hungarian pointer": 82.0,
+        "laptop, laptop computer": 57.99999999999999,
+        "stretcher": 44.0,
+        "Dutch oven": 66.0,
+        "African hunting dog, hyena dog, Cape hunting dog, Lycaon pictus": 100.0,
+        "boxer": 68.0,
+        "gasmask, respirator, gas helmet": 76.0,
+        "goose": 78.0,
+        "borzoi, Russian wolfhound": 76.0
+    },
+    "paper_accuracy": 98.13,
+    "difference_from_paper": -23.669999999999987,
+    "total_samples": 5000,
+    "classification_report": {
+        "bonnet, poke bonnet": {
+            "precision": 0.7857142857142857,
+            "recall": 0.66,
+            "f1-score": 0.717391304347826,
+            "support": 50.0
+        },
+        "green mamba": {
+            "precision": 0.851063829787234,
+            "recall": 0.8,
+            "f1-score": 0.8247422680412371,
+            "support": 50.0
+        },
+        "langur": {
+            "precision": 0.8636363636363636,
+            "recall": 0.76,
+            "f1-score": 0.8085106382978723,
+            "support": 50.0
+        },
+        "Doberman, Doberman pinscher": {
+            "precision": 0.6415094339622641,
+            "recall": 0.68,
+            "f1-score": 0.6601941747572816,
+            "support": 50.0
+        },
+        "gyromitra": {
+            "precision": 0.9591836734693877,
+            "recall": 0.94,
+            "f1-score": 0.9494949494949495,
+            "support": 50.0
+        },
+        "Saluki, gazelle hound": {
+            "precision": 0.5555555555555556,
+            "recall": 0.7,
+            "f1-score": 0.6194690265486725,
+            "support": 50.0
+        },
+        "vacuum, vacuum cleaner": {
+            "precision": 0.5689655172413793,
+            "recall": 0.66,
+            "f1-score": 0.6111111111111112,
+            "support": 50.0
+        },
+        "window screen": {
+            "precision": 0.8222222222222222,
+            "recall": 0.74,
+            "f1-score": 0.7789473684210526,
+            "support": 50.0
+        },
+        "cocktail shaker": {
+            "precision": 0.7674418604651163,
+            "recall": 0.66,
+            "f1-score": 0.7096774193548387,
+            "support": 50.0
+        },
+        "garden spider, Aranea diademata": {
+            "precision": 0.8958333333333334,
+            "recall": 0.86,
+            "f1-score": 0.8775510204081632,
+            "support": 50.0
+        },
+        "garter snake, grass snake": {
+            "precision": 0.7719298245614035,
+            "recall": 0.88,
+            "f1-score": 0.822429906542056,
+            "support": 50.0
+        },
+        "carbonara": {
+            "precision": 0.9555555555555556,
+            "recall": 0.86,
+            "f1-score": 0.9052631578947369,
+            "support": 50.0
+        },
+        "pineapple, ananas": {
+            "precision": 0.9148936170212766,
+            "recall": 0.86,
+            "f1-score": 0.8865979381443299,
+            "support": 50.0
+        },
+        "computer keyboard, keypad": {
+            "precision": 0.6607142857142857,
+            "recall": 0.74,
+            "f1-score": 0.6981132075471698,
+            "support": 50.0
+        },
+        "tripod": {
+            "precision": 0.6818181818181818,
+            "recall": 0.6,
+            "f1-score": 0.6382978723404256,
+            "support": 50.0
+        },
+        "komondor": {
+            "precision": 0.8936170212765957,
+            "recall": 0.84,
+            "f1-score": 0.865979381443299,
+            "support": 50.0
+        },
+        "American lobster, Northern lobster, Maine lobster, Homarus americanus": {
+            "precision": 0.8301886792452831,
+            "recall": 0.88,
+            "f1-score": 0.8543689320388349,
+            "support": 50.0
+        },
+        "bannister, banister, balustrade, balusters, handrail": {
+            "precision": 0.6666666666666666,
+            "recall": 0.8,
+            "f1-score": 0.7272727272727273,
+            "support": 50.0
+        },
+        "honeycomb": {
+            "precision": 0.8636363636363636,
+            "recall": 0.76,
+            "f1-score": 0.8085106382978723,
+            "support": 50.0
+        },
+        "tile roof": {
+            "precision": 0.9142857142857143,
+            "recall": 0.64,
+            "f1-score": 0.7529411764705882,
+            "support": 50.0
+        },
+        "papillon": {
+            "precision": 0.75,
+            "recall": 0.9,
+            "f1-score": 0.8181818181818182,
+            "support": 50.0
+        },
+        "boathouse": {
+            "precision": 0.7592592592592593,
+            "recall": 0.82,
+            "f1-score": 0.7884615384615384,
+            "support": 50.0
+        },
+        "stinkhorn, carrion fungus": {
+            "precision": 0.8627450980392157,
+            "recall": 0.88,
+            "f1-score": 0.8712871287128713,
+            "support": 50.0
+        },
+        "jean, blue jean, denim": {
+            "precision": 0.7551020408163265,
+            "recall": 0.74,
+            "f1-score": 0.7474747474747475,
+            "support": 50.0
+        },
+        "Chihuahua": {
+            "precision": 0.4594594594594595,
+            "recall": 0.34,
+            "f1-score": 0.39080459770114945,
+            "support": 50.0
+        },
+        "Chesapeake Bay retriever": {
+            "precision": 0.7647058823529411,
+            "recall": 0.52,
+            "f1-score": 0.6190476190476191,
+            "support": 50.0
+        },
+        "robin, American robin, Turdus migratorius": {
+            "precision": 0.9782608695652174,
+            "recall": 0.9,
+            "f1-score": 0.9375,
+            "support": 50.0
+        },
+        "tub, vat": {
+            "precision": 0.6153846153846154,
+            "recall": 0.64,
+            "f1-score": 0.6274509803921569,
+            "support": 50.0
+        },
+        "Great Dane": {
+            "precision": 0.48148148148148145,
+            "recall": 0.52,
+            "f1-score": 0.5,
+            "support": 50.0
+        },
+        "rotisserie": {
+            "precision": 0.7407407407407407,
+            "recall": 0.8,
+            "f1-score": 0.7692307692307693,
+            "support": 50.0
+        },
+        "bottlecap": {
+            "precision": 0.673469387755102,
+            "recall": 0.66,
+            "f1-score": 0.6666666666666666,
+            "support": 50.0
+        },
+        "throne": {
+            "precision": 0.8809523809523809,
+            "recall": 0.74,
+            "f1-score": 0.8043478260869565,
+            "support": 50.0
+        },
+        "little blue heron, Egretta caerulea": {
+            "precision": 0.9423076923076923,
+            "recall": 0.98,
+            "f1-score": 0.9607843137254902,
+            "support": 50.0
+        },
+        "rock crab, Cancer irroratus": {
+            "precision": 0.6382978723404256,
+            "recall": 0.6,
+            "f1-score": 0.6185567010309279,
+            "support": 50.0
+        },
+        "Rottweiler": {
+            "precision": 0.7,
+            "recall": 0.84,
+            "f1-score": 0.7636363636363637,
+            "support": 50.0
+        },
+        "lorikeet": {
+            "precision": 0.9245283018867925,
+            "recall": 0.98,
+            "f1-score": 0.9514563106796117,
+            "support": 50.0
+        },
+        "Gila monster, Heloderma suspectum": {
+            "precision": 0.78,
+            "recall": 0.78,
+            "f1-score": 0.78,
+            "support": 50.0
+        },
+        "head cabbage": {
+            "precision": 0.88,
+            "recall": 0.88,
+            "f1-score": 0.88,
+            "support": 50.0
+        },
+        "car wheel": {
+            "precision": 0.7254901960784313,
+            "recall": 0.74,
+            "f1-score": 0.7326732673267327,
+            "support": 50.0
+        },
+        "coyote, prairie wolf, brush wolf, Canis latrans": {
+            "precision": 0.7727272727272727,
+            "recall": 0.68,
+            "f1-score": 0.723404255319149,
+            "support": 50.0
+        },
+        "moped": {
+            "precision": 0.6268656716417911,
+            "recall": 0.84,
+            "f1-score": 0.717948717948718,
+            "support": 50.0
+        },
+        "milk can": {
+            "precision": 0.7142857142857143,
+            "recall": 0.5,
+            "f1-score": 0.5882352941176471,
+            "support": 50.0
+        },
+        "mixing bowl": {
+            "precision": 0.7258064516129032,
+            "recall": 0.9,
+            "f1-score": 0.8035714285714286,
+            "support": 50.0
+        },
+        "toy terrier": {
+            "precision": 0.6923076923076923,
+            "recall": 0.54,
+            "f1-score": 0.6067415730337079,
+            "support": 50.0
+        },
+        "chocolate sauce, chocolate syrup": {
+            "precision": 0.7692307692307693,
+            "recall": 0.8,
+            "f1-score": 0.7843137254901961,
+            "support": 50.0
+        },
+        "rocking chair, rocker": {
+            "precision": 0.6041666666666666,
+            "recall": 0.58,
+            "f1-score": 0.5918367346938775,
+            "support": 50.0
+        },
+        "wing": {
+            "precision": 0.8461538461538461,
+            "recall": 0.88,
+            "f1-score": 0.8627450980392157,
+            "support": 50.0
+        },
+        "park bench": {
+            "precision": 0.6666666666666666,
+            "recall": 0.68,
+            "f1-score": 0.6732673267326733,
+            "support": 50.0
+        },
+        "ambulance": {
+            "precision": 0.8166666666666667,
+            "recall": 0.98,
+            "f1-score": 0.8909090909090909,
+            "support": 50.0
+        },
+        "football helmet": {
+            "precision": 0.6964285714285714,
+            "recall": 0.78,
+            "f1-score": 0.7358490566037735,
+            "support": 50.0
+        },
+        "leafhopper": {
+            "precision": 0.8392857142857143,
+            "recall": 0.94,
+            "f1-score": 0.8867924528301887,
+            "support": 50.0
+        },
+        "cauliflower": {
+            "precision": 0.9215686274509803,
+            "recall": 0.94,
+            "f1-score": 0.9306930693069307,
+            "support": 50.0
+        },
+        "pirate, pirate ship": {
+            "precision": 0.9387755102040817,
+            "recall": 0.92,
+            "f1-score": 0.9292929292929293,
+            "support": 50.0
+        },
+        "purse": {
+            "precision": 0.5,
+            "recall": 0.46,
+            "f1-score": 0.4791666666666667,
+            "support": 50.0
+        },
+        "hare": {
+            "precision": 0.8541666666666666,
+            "recall": 0.82,
+            "f1-score": 0.8367346938775511,
+            "support": 50.0
+        },
+        "lampshade, lamp shade": {
+            "precision": 0.7619047619047619,
+            "recall": 0.64,
+            "f1-score": 0.6956521739130435,
+            "support": 50.0
+        },
+        "fiddler crab": {
+            "precision": 0.6956521739130435,
+            "recall": 0.64,
+            "f1-score": 0.6666666666666666,
+            "support": 50.0
+        },
+        "standard poodle": {
+            "precision": 0.8,
+            "recall": 0.8,
+            "f1-score": 0.8,
+            "support": 50.0
+        },
+        "Shih-Tzu": {
+            "precision": 0.7457627118644068,
+            "recall": 0.88,
+            "f1-score": 0.8073394495412844,
+            "support": 50.0
+        },
+        "pedestal, plinth, footstall": {
+            "precision": 0.8043478260869565,
+            "recall": 0.74,
+            "f1-score": 0.7708333333333334,
+            "support": 50.0
+        },
+        "gibbon, Hylobates lar": {
+            "precision": 0.8,
+            "recall": 0.88,
+            "f1-score": 0.8380952380952381,
+            "support": 50.0
+        },
+        "safety pin": {
+            "precision": 0.7096774193548387,
+            "recall": 0.44,
+            "f1-score": 0.5432098765432098,
+            "support": 50.0
+        },
+        "English foxhound": {
+            "precision": 0.7222222222222222,
+            "recall": 0.26,
+            "f1-score": 0.38235294117647056,
+            "support": 50.0
+        },
+        "chime, bell, gong": {
+            "precision": 0.5365853658536586,
+            "recall": 0.44,
+            "f1-score": 0.4835164835164835,
+            "support": 50.0
+        },
+        "American Staffordshire terrier, Staffordshire terrier, American pit bull terrier, pit bull terrier": {
+            "precision": 0.625,
+            "recall": 0.7,
+            "f1-score": 0.660377358490566,
+            "support": 50.0
+        },
+        "bassinet": {
+            "precision": 0.7368421052631579,
+            "recall": 0.84,
+            "f1-score": 0.7850467289719626,
+            "support": 50.0
+        },
+        "wild boar, boar, Sus scrofa": {
+            "precision": 0.8214285714285714,
+            "recall": 0.92,
+            "f1-score": 0.8679245283018868,
+            "support": 50.0
+        },
+        "theater curtain, theatre curtain": {
+            "precision": 0.7692307692307693,
+            "recall": 0.8,
+            "f1-score": 0.7843137254901961,
+            "support": 50.0
+        },
+        "dung beetle": {
+            "precision": 0.8936170212765957,
+            "recall": 0.84,
+            "f1-score": 0.865979381443299,
+            "support": 50.0
+        },
+        "hognose snake, puff adder, sand viper": {
+            "precision": 0.6862745098039216,
+            "recall": 0.7,
+            "f1-score": 0.693069306930693,
+            "support": 50.0
+        },
+        "Mexican hairless": {
+            "precision": 0.9230769230769231,
+            "recall": 0.72,
+            "f1-score": 0.8089887640449438,
+            "support": 50.0
+        },
+        "mortarboard": {
+            "precision": 0.7872340425531915,
+            "recall": 0.74,
+            "f1-score": 0.7628865979381443,
+            "support": 50.0
+        },
+        "Walker hound, Walker foxhound": {
+            "precision": 0.5,
+            "recall": 0.76,
+            "f1-score": 0.6031746031746031,
+            "support": 50.0
+        },
+        "red fox, Vulpes vulpes": {
+            "precision": 0.8431372549019608,
+            "recall": 0.86,
+            "f1-score": 0.8514851485148515,
+            "support": 50.0
+        },
+        "modem": {
+            "precision": 0.55,
+            "recall": 0.66,
+            "f1-score": 0.6,
+            "support": 50.0
+        },
+        "slide rule, slipstick": {
+            "precision": 0.75,
+            "recall": 0.66,
+            "f1-score": 0.7021276595744681,
+            "support": 50.0
+        },
+        "walking stick, walkingstick, stick insect": {
+            "precision": 0.8043478260869565,
+            "recall": 0.74,
+            "f1-score": 0.7708333333333334,
+            "support": 50.0
+        },
+        "cinema, movie theater, movie theatre, movie house, picture palace": {
+            "precision": 0.6607142857142857,
+            "recall": 0.74,
+            "f1-score": 0.6981132075471698,
+            "support": 50.0
+        },
+        "meerkat, mierkat": {
+            "precision": 0.8913043478260869,
+            "recall": 0.82,
+            "f1-score": 0.8541666666666666,
+            "support": 50.0
+        },
+        "kuvasz": {
+            "precision": 0.75,
+            "recall": 0.9,
+            "f1-score": 0.8181818181818182,
+            "support": 50.0
+        },
+        "obelisk": {
+            "precision": 0.7719298245614035,
+            "recall": 0.88,
+            "f1-score": 0.822429906542056,
+            "support": 50.0
+        },
+        "harmonica, mouth organ, harp, mouth harp": {
+            "precision": 0.5777777777777777,
+            "recall": 0.52,
+            "f1-score": 0.5473684210526316,
+            "support": 50.0
+        },
+        "sarong": {
+            "precision": 0.6363636363636364,
+            "recall": 0.7,
+            "f1-score": 0.6666666666666666,
+            "support": 50.0
+        },
+        "mousetrap": {
+            "precision": 0.6590909090909091,
+            "recall": 0.58,
+            "f1-score": 0.6170212765957447,
+            "support": 50.0
+        },
+        "hard disc, hard disk, fixed disk": {
+            "precision": 0.6349206349206349,
+            "recall": 0.8,
+            "f1-score": 0.7079646017699115,
+            "support": 50.0
+        },
+        "American coot, marsh hen, mud hen, water hen, Fulica americana": {
+            "precision": 0.9166666666666666,
+            "recall": 0.88,
+            "f1-score": 0.8979591836734694,
+            "support": 50.0
+        },
+        "reel": {
+            "precision": 0.7435897435897436,
+            "recall": 0.58,
+            "f1-score": 0.651685393258427,
+            "support": 50.0
+        },
+        "pickup, pickup truck": {
+            "precision": 0.8076923076923077,
+            "recall": 0.84,
+            "f1-score": 0.8235294117647058,
+            "support": 50.0
+        },
+        "iron, smoothing iron": {
+            "precision": 0.6610169491525424,
+            "recall": 0.78,
+            "f1-score": 0.7155963302752294,
+            "support": 50.0
+        },
+        "tabby, tabby cat": {
+            "precision": 0.7777777777777778,
+            "recall": 0.84,
+            "f1-score": 0.8076923076923077,
+            "support": 50.0
+        },
+        "ski mask": {
+            "precision": 0.7111111111111111,
+            "recall": 0.64,
+            "f1-score": 0.6736842105263158,
+            "support": 50.0
+        },
+        "vizsla, Hungarian pointer": {
+            "precision": 0.640625,
+            "recall": 0.82,
+            "f1-score": 0.7192982456140351,
+            "support": 50.0
+        },
+        "laptop, laptop computer": {
+            "precision": 0.48333333333333334,
+            "recall": 0.58,
+            "f1-score": 0.5272727272727272,
+            "support": 50.0
+        },
+        "stretcher": {
+            "precision": 0.6875,
+            "recall": 0.44,
+            "f1-score": 0.5365853658536586,
+            "support": 50.0
+        },
+        "Dutch oven": {
+            "precision": 0.717391304347826,
+            "recall": 0.66,
+            "f1-score": 0.6875,
+            "support": 50.0
+        },
+        "African hunting dog, hyena dog, Cape hunting dog, Lycaon pictus": {
+            "precision": 0.9615384615384616,
+            "recall": 1.0,
+            "f1-score": 0.9803921568627451,
+            "support": 50.0
+        },
+        "boxer": {
+            "precision": 0.5666666666666667,
+            "recall": 0.68,
+            "f1-score": 0.6181818181818182,
+            "support": 50.0
+        },
+        "gasmask, respirator, gas helmet": {
+            "precision": 0.7037037037037037,
+            "recall": 0.76,
+            "f1-score": 0.7307692307692307,
+            "support": 50.0
+        },
+        "goose": {
+            "precision": 0.78,
+            "recall": 0.78,
+            "f1-score": 0.78,
+            "support": 50.0
+        },
+        "borzoi, Russian wolfhound": {
+            "precision": 0.7916666666666666,
+            "recall": 0.76,
+            "f1-score": 0.7755102040816326,
+            "support": 50.0
+        },
+        "accuracy": 0.7446,
+        "macro avg": {
+            "precision": 0.7496044238490803,
+            "recall": 0.7446,
+            "f1-score": 0.7418736943040786,
+            "support": 5000.0
+        },
+        "weighted avg": {
+            "precision": 0.7496044238490803,
+            "recall": 0.7446,
+            "f1-score": 0.7418736943040786,
+            "support": 5000.0
+        }
+    }
+}
